@@ -35,12 +35,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  *          - 'woocommerce_before_cart'
  */
 
-class WooCommerce_MajeMedia_Single_Top_Level_Category_Cart {
+class MMWC_STLCIC {
 
 	private static $instance;
 
 	/**
-	 * @return WooCommerce_MajeMedia_Single_Top_Level_Category_Cart
+	 * @return MMWC_STLCIC
 	 * @since 1.0.0
 	 */
 	public static function get_instance() {
@@ -53,18 +53,15 @@ class WooCommerce_MajeMedia_Single_Top_Level_Category_Cart {
 	}
 
 	/**
-	 * WooCommerce_MajeMedia_Single_Top_Level_Category_Cart constructor.
+	 * MMWC_STLCIC constructor.
 	 * @since 1.0.0
 	 */
 	public function __construct() {
 
 		require 'autoload.php';
 
-		add_action( 'activate_plugin', array( 'WooCommerce_MajeMedia_Single_Top_Level_Category_Cart', 'activate' ) );
-		add_action( 'deactivate_plugin', array( 'WooCommerce_MajeMedia_Single_Top_Level_Category_Cart', 'deactivate' ) );
-
-		self::actions;
-		self::filters;
+		self::actions();
+		self::filters();
 
 	}
 
@@ -78,6 +75,16 @@ class WooCommerce_MajeMedia_Single_Top_Level_Category_Cart {
 
 	public static function actions() {
 
+		// Plugin Setup/Teardown
+		add_action( 'activate_plugin', array( 'MMWC_STLCIC', 'activate' ) );
+		add_action( 'deactivate_plugin', array( 'MMWC_STLCIC', 'deactivate' ) );
+
+		// Cart Actions
+		add_action( 'woocommerce_before_cart', array( 'MMWC_STLCIC_Cart_Information', 'cart_information' ) );
+
+		// Test
+		//add_action( 'wp_loaded', array( 'MMWC_STLCIC_Product_Information', 'get_product_top_level_categories' ) );
+
 	}
 
 	public static function filters() {
@@ -86,4 +93,4 @@ class WooCommerce_MajeMedia_Single_Top_Level_Category_Cart {
 
 }
 
-$WooCommerce_MajeMedia_Single_Top_Level_Category_Cart = WooCommerce_MajeMedia_Single_Top_Level_Category_Cart::get_instance();
+$MMWC_STLCIC = MMWC_STLCIC::get_instance();
