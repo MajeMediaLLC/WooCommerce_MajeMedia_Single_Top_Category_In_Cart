@@ -79,11 +79,11 @@ class MMWC_STLCIC {
 		add_action( 'activate_plugin', array( 'MMWC_STLCIC', 'activate' ) );
 		add_action( 'deactivate_plugin', array( 'MMWC_STLCIC', 'deactivate' ) );
 
-		// Cart Actions
-		add_action( 'woocommerce_before_cart', array( 'MMWC_STLCIC_Cart_Information', 'cart_information' ) );
+		add_action( 'woocommerce_add_to_cart', array( 'MMWC_STLCIC_Cart_Actions', 'check_added_cart_product' ), 10, 2 );
 
 		// Test
 		//add_action( 'wp_loaded', array( 'MMWC_STLCIC_Product_Information', 'get_product_top_level_categories' ) );
+
 
 	}
 
