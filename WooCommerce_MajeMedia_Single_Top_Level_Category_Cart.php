@@ -4,7 +4,7 @@
 Plugin Name: WooCommerce Single Top Level Category In Cart
 Plugin URI:  https://majemedia.com/plugins/single-top-level-category-in-cart
 Description: Don't allow the placement of products from multiple top level categories in the cart.
-Version:     1.0.0
+Version:     1.0.1
 Author:      Maje Media LLC
 Author URI:  https://majemedia.com
 License:     GPL2
