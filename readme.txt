@@ -2,8 +2,8 @@
 Contributors: majemedia
 Tags: toolbar
 Requires at least: 4.4.2
-Tested up to: 4.7
-Stable tag: 1.0.2
+Tested up to: 4.8
+Stable tag: 1.0.3
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,6 +16,9 @@ Restricts the placement of multiple products with different top level categories
 == Screenshots ==
 
 == Changelog ==
+= v1.0.3 =
+* Tested to WP version 4.8
+
 = v1.0.2 =
 * Tested to WP version 4.7
 

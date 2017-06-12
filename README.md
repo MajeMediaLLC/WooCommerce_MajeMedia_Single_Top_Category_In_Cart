@@ -6,6 +6,9 @@ Restricts the cart to only contain products from a single top level category.
 ## Installation
 
 ## Changelog
+### 1.0.3
+* Tested to WordPress 4.8
+
 ### 1.0.2
 * Tested to WordPress 4.7
 
